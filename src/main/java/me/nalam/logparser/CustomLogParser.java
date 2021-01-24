@@ -30,6 +30,7 @@ public class CustomLogParser {
         if (!logEvents.isEmpty()) {
           for (Event event : logEvents) {
             saveEvent(event);
+            log.debug("Successfully saved event with id as {}", event.getId());
           }
         }
       }

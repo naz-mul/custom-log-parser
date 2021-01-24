@@ -20,14 +20,12 @@ public class TextProcessor implements LogProcessor {
   @Override
   public Object load(String absFilePath) throws Exception {
     try (BufferedReader reader = new BufferedReader(new FileReader(absFilePath))) {
-      // TODO validate each line has new line
-      // TODO validate each line is a json object
       Gson gson = new Gson();
       reader
           .lines()
           .forEach(
               line -> {
-                log.debug(line);
+                log.debug("Current line from the file is {} ", line);
                 ServerLogEvent currentLog = gson.fromJson(line, ServerLogEvent.class);
                 if (hashMap.containsKey(currentLog.getId())) {
                   ServerLogEvent previousLog = hashMap.get(currentLog.getId());

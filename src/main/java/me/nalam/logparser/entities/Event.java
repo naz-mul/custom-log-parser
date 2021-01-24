@@ -1,6 +1,7 @@
 package me.nalam.logparser.entities;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import me.nalam.logparser.constants.EventType;
@@ -64,6 +65,23 @@ public class Event implements Serializable {
 
   public void setAlert(boolean alert) {
     this.alert = alert;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Event event = (Event) o;
+    return alert == event.alert && id.equals(event.id) && duration.equals(event.duration);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, duration, type, host, alert);
   }
 
   @Override
