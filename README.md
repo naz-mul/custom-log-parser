@@ -13,10 +13,10 @@ A simple Java based tool to analyse server logs.
 
 # Running
 
-- Run `./mvw compile` on Linux/macOS based platforms
+- Run `./mvnw compile` on Linux/macOS based platforms
   - **OR** Run `mvnw.bat compile` on Windows
 - Enter the absolute path of the **logfile.txt**
-- The program will continue to run indefinitely unless a wrong file path is fed in the input
+- The program will continue to run indefinitely unless a wrong file path/extension is fed in the input
 - Otherwise, press `Ctrl + C`  or `Cmd + C` to exit
 
 # TL;DR
