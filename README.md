@@ -17,6 +17,7 @@ A simple Java based tool to analyse server logs.
   - **OR** Run `mvnw.bat compile` on Windows
 - Enter the absolute path of the **logfile.txt**
 - The program will continue to run indefinitely unless a wrong file path/extension is fed in the input
+  - If you feed the same logfile again, it will throw `ConstraintViolationException` 
 - Otherwise, press `Ctrl + C`  or `Cmd + C` to exit
 
 # TL;DR
